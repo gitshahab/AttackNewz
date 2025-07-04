@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { IoMoon, IoSunny  } from "react-icons/io5";
 
 const ThemeToggleButton = () => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   // Prevent hydration mismatch
@@ -15,7 +15,7 @@ const ThemeToggleButton = () => {
 
   if (!mounted) return null;
 
-  const isDark = theme === 'dark';
+  const isDark = resolvedTheme === 'dark';
 
   return (
     <button
