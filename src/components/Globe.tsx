@@ -66,7 +66,7 @@ export default function GlobeView() {
         };
       });
 
-      const globeInstance = Globe()(globeRef.current!)
+      Globe()(globeRef.current!)
         .globeImageUrl("//unpkg.com/three-globe/example/img/earth-dark.jpg")
         .backgroundColor("rgba(0,0,0,0)")
         .polygonsData(enrichedCountries)

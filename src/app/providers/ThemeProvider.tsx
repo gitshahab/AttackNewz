@@ -6,7 +6,7 @@ import { ReactNode,useState, useEffect } from 'react';
 const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [mounted, setMounted] = useState(false);
 
-  // Prevent hydration mismatch, useEffect only runs on client so that UI show safely
+  //useEffect only runs on client so that UI show safely
   useEffect(() => {
     setMounted(true);
   }, []);
