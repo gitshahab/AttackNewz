@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+
+:root {
+  --gold: #FD5D00;
+  --neutral-dark: #121212;
+  --neutral-light: #E0E0E0;
+  --secure-teal: #00BFA6;
+  --threat-blue: #2C84D8;
+  --alert-amber: #FC6000;
+  --adversary-red: #E63946;
+}
+
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --color-neutralDark: var(--neutral-dark);
+  --color-neutralLight: var(--neutral-light);
+  --color-gold: var(--gold);
+  --color-secureTeal: var(--secure-teal);
+  --color-threatBlue: var(--threat-blue);
+  --color-alertAmber: var(--alert-amber);
+  --color-adversaryRed: var(--adversary-red);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
