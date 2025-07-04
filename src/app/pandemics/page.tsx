@@ -13,7 +13,7 @@ const Pandemics = () => {
   const pandemicsIncident = incidents.filter(i => i.type === 'Pandemic');
 
   return (
-    <main className="max-w-5xl mx-auto px-4 py-8">
+    <main className="max-w-5xl mx-auto px-4 py-8 mt-10 min-h-screen">
       <div className='flex justify-between items-center'>
         <h1 className="text-2xl font-bold font-mono mb-6">Pandemic</h1>
         <Link href="/" className="text-sm font-mono hover:underline hover:text-gold mb-6 inline-block">

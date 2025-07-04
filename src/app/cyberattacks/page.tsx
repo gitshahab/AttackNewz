@@ -13,7 +13,7 @@ const CyberattacksPage = () => {
   const cyberIncidents = incidents.filter(i => i.type === 'Cyberattack');
 
   return (
-    <main className="max-w-5xl mx-auto px-4 py-8">
+    <main className="max-w-5xl mx-auto px-4 py-8 mt-10">
       <div className='flex justify-between items-center'>
         <h1 className="text-2xl font-bold font-mono mb-6">Cyberattacks</h1>
         <Link href="/" className="text-sm font-mono hover:underline hover:text-gold mb-6 inline-block">

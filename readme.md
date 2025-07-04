@@ -22,7 +22,7 @@ We consciously avoided providers like **Maxbox**, which asked for unnecessary ba
 
 | Layer        | Tech                          |
 | ------------ | ----------------------------- |
-| Framework    | Next.js (App Router)       |
+| Framework    | Next.js 15 (App Router)       |
 | Styling      | Tailwind CSS                  |
 | Language     | TypeScript                    |
 | Globe Visual | react-globe.gl                |
