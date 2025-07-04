@@ -2,8 +2,15 @@ import IncidentCard from '@/components/IncidentCard';
 import { mockIncidents } from '@/data/mockIncidents';
 import Link from 'next/link';
 
-const CyberattacksPage = () => {
-  const cyberIncidents = mockIncidents.filter(i => i.type === 'Infrastructure Failure');
+import { Incident, IncidentType } from '@/types/incidents';
+const incidents: Incident[] = mockIncidents.map(data => ({
+  ...data,
+  type: data.type as IncidentType,
+  severity: data.severity as 'Low' | 'Medium' | 'High',
+}));
+
+const Infrastructure = () => {
+  const infraIncidents = incidents.filter(i => i.type === 'Infrastructure Failure');
 
   return (
     <main className="max-w-5xl mx-auto px-4 py-8">
@@ -14,7 +21,7 @@ const CyberattacksPage = () => {
         </Link>
       </div>
       <div className="grid gap-4">
-        {cyberIncidents.map(incident => (
+        {infraIncidents.map(incident => (
           <IncidentCard key={incident.id} incident={incident} />
         ))}
       </div>
@@ -22,4 +29,4 @@ const CyberattacksPage = () => {
   );
 };
 
-export default CyberattacksPage;
+export default Infrastructure;

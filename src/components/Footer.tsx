@@ -1,5 +1,5 @@
 'use client';
-
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -10,11 +10,13 @@ export default function Footer() {
           {/* Branding */}
           <div className="mb-6 md:mb-0">
             <Link href="/" className="flex items-center space-x-2">
-              <img
-                src="/AttackNewz-logo.jpg"
-                className="h-8 w-auto"
-                alt="Project Logo"
-              />
+                <Image
+                    className="h-10 w-auto overflow-hidden  rounded-lg"
+                    src="/AttackNewz-logo.jpg"
+                    alt="AttackNewz Logo"
+                    width={16}
+                    height={16}
+                />
               <span className="text-xl font-bold font-mono">
                 AttackNewz
               </span>

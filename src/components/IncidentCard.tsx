@@ -1,11 +1,13 @@
 import React from 'react'
 import type { Incident } from '@/types/incidents'
+import Image from 'next/image';
 
 type Props = {
   incident: Incident;
 };
 
 const IncidentCard = ({incident} : Props) => {
+    const img = incident.imgUrl || "/defaultImg.jpg"
   return (
     <div className="space-y-4">
     <h1 className="text-3xl font-mono font-bold text-gold">{incident.title}</h1>
@@ -18,9 +20,11 @@ const IncidentCard = ({incident} : Props) => {
     <div className="lg:flex items-start gap-8">
         {/* Image Section */}
         <div className="w-full lg:w-[45%]">
-            <img
-            src={incident.imgUrl}
+            <Image
+            src={img}
             alt={incident.title}
+            width={500}
+            height={400}
             className="w-full h-auto max-h-[500px] rounded-xl shadow-md object-cover"
             />
         </div>

@@ -3,8 +3,15 @@ import NotFound from "@/components/NotFound";
 import { mockIncidents } from "@/data/mockIncidents";
 import Link from "next/link";
 
+import { Incident, IncidentType } from '@/types/incidents';
+const incidents: Incident[] = mockIncidents.map(data => ({
+  ...data,
+  type: data.type as IncidentType,
+  severity: data.severity as 'Low' | 'Medium' | 'High',
+}));
+
 export default function IncidentPage({ params }: { params: { id: string } }) {
-  const incident = mockIncidents.find((i) => i.id === params.id);
+  const incident = incidents.find((i) => i.id === params.id);
 
   if (!incident) {
     return <NotFound msgText="Incident Not Found" />;

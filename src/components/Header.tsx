@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 import { FiMenu } from 'react-icons/fi';
 import ThemeToggleButton from './ThemeToggleButton';
+import Image from 'next/image';
 
 const categories = [
   { label: 'Cyberattacks', href: '/cyberattacks' },
@@ -33,10 +34,12 @@ const Header = () => {
 
       {/* Logo */}
       <Link href="/" className="hidden lg:flex flex-1 gap-2 items-center">
-        <img
+        <Image
           className="h-10 w-auto overflow-hidden  rounded-lg"
           src="/AttackNewz-logo.jpg"
           alt="AttackNewz Logo"
+          width={16}
+          height={16}
         />
         <h1 className='text-gold font-mono font-bold text-2xl'>AttackNewz</h1>
       </Link>

@@ -2,8 +2,15 @@ import IncidentCard from '@/components/IncidentCard';
 import { mockIncidents } from '@/data/mockIncidents';
 import Link from 'next/link';
 
+import { Incident, IncidentType } from '@/types/incidents';
+const incidents: Incident[] = mockIncidents.map(data => ({
+  ...data,
+  type: data.type as IncidentType,
+  severity: data.severity as 'Low' | 'Medium' | 'High',
+}));
+
 const CyberattacksPage = () => {
-  const cyberIncidents = mockIncidents.filter(i => i.type === 'Cyberattack');
+  const cyberIncidents = incidents.filter(i => i.type === 'Cyberattack');
 
   return (
     <main className="max-w-5xl mx-auto px-4 py-8">
